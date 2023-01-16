@@ -30,6 +30,7 @@ toc: true
 - Added `twbs/examples` repo contents to the top of the Examples page.
 - Improved docs code syntax colors and more across light and dark mode
 - Shadows always stay dark once again.
+- Removed `--bs-form-control-*` CSS variables and reassigned the Sass variables to our `--bs-body-bg` CSS variables. This resolves an issue where a re-used CSS variable doesn't have it's value updated.
 
 <hr class="mb-4">
 
