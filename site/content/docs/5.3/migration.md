@@ -31,6 +31,7 @@ toc: true
 - Improved docs code syntax colors and more across light and dark mode
 - Shadows always stay dark once again.
 - Removed `--bs-form-control-*` CSS variables and reassigned the Sass variables to our `--bs-body-bg` CSS variables. This resolves an issue where a re-used CSS variable doesn't have it's value updated.
+- Deprecated `.text-muted` and `$text-muted`. It's been replaced with `.text-body-secondary` and `--bs-secondary-color`
 
 <hr class="mb-4">
 
