@@ -1,3 +1,69 @@
+# Video::Js::Rails
+
+Video.js is a JavaScript and CSS library that makes it easier to work with and build on HTML5 video
+
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'video-js-rails'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install video-js-rails
+
+Add the resources to your application.js file
+
+    //= require video-js
+
+Add the resources to your application.css file
+
+    *= require video-js
+
+## Usage
+
+Add something like this to your view:
+
+    <%= video_player src: { mp4: '/videos/some.mp4' }, controls: true %>
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
 <p align="center">
   <a href="https://getbootstrap.com/">
     <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap logo" width="200" height="165">
