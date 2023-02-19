@@ -1,14 +1,56 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-</div>
 
-<%= link_to "New post", new_post_path %>
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Posts</h1>
+    <%= link_to 'New post', new_post_path,
+    class: "rounded-lg py-3 1px-5 bg-blue-600 1text-white block font-medium" %>
+  </div>
+
+  <div id="posts" class="min-w-full">
+    <hr />
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th style="width:10px; heigh:auto"></th>
+          <th>Title</th>
+          <th style="width:10px; heigh:auto"></th>
+          <th>Body</th>
+          <th style="width:10px; heigh:auto"></th>
+          <th></th>
+          <th style="width:10px; heigh:auto"></th>
+          <th colspan="3"></th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @posts.each do |post| %>
+         <tr style="padding:10px 20px 25px 0">
+           <td>
+             <% if post.image.attached? %>
+               <%= link_to image_tag(post.image,
+               style:"width:60px; heigh:auto"), post.image %>
+             <% end %>
+           </td>
+           <td style="width:30px; heigh:auto"></td>
+           <td><%= post.title %></td>
+           <td style="width:30px; heigh:auto"></td>
+           <td style="padding-top:10px; padding-right:0px; padding-bottom:20px;
+           padding-left:0"><%= truncate(strip_tags(post.body.to_s), length: 80) %></td>          <td style="width:30px; heigh:auto"></td>
+           <td style="width:10px; heigh:auto"></td>
+           <td><%= link_to 'Show', post %></td>
+           <td style="width:7px; heigh:auto"></td>
+           <td><%= link_to 'Edit', edit_post_path(post) %></td>
+         </tr>
+       <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<hr />
+<div class="container">
+  <%= link_to "New post", new_post_path %>
+</div>
+<br />

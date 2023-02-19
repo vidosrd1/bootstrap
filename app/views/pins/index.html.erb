@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Pins</h1>
+  <br />
+  <h1>Image/Pictures</h1>
   <div class="container" style="padding:10px 20px 25px 0">
     <%= link_to "New pin", new_pin_path %>
   </div>
@@ -20,7 +21,12 @@
    <tbody>
      <% @pins.each do |pin| %>
        <tr style="padding:10px 20px 25px 0">
-         <td><%= link_to image_tag(pin.image, style:"width:60px; heigh:auto"), pin.image %></td> 
+         <td>
+           <% if pin.image.attached? %>
+             <%= link_to image_tag(pin.image,
+             style:"width:60px; heigh:auto"), pin.image %>
+           <% end %>
+         </td>
          <td style="width:60px; heigh:auto"></td>
          <td><%= pin.title %></td>
          <td style="width:30px; heigh:auto"></td>
@@ -38,3 +44,4 @@
 <div class="container">
   <%= link_to 'New Pin', new_pin_path %>
 </div>
+<br />

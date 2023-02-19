@@ -1,0 +1,34 @@
+<div id="<%= dom_id novine %>">
+  <p class="my-5">
+    <strong>User:</strong>
+    <%= novine.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= novine.title %>
+  </p>
+  <br />
+  <% if novine.image.content_type.in?(%w[image/jpeg image/png image/jpg]) %>
+    <%= link_to image_tag(novine.image_as_thumbnail),
+      novine.image if
+      novine.image.attached? %>
+  <% end %>
+  <hr />
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Publish:</strong>
+    <%= novine.publish %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Body:</strong>
+    <%= novine.body %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this novine", novine, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this novine', edit_novine_path(novine), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

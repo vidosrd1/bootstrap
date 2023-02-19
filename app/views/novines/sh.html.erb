@@ -1,0 +1,10 @@
+<%= render @novine %>
+<li class="">
+  <p style="width:310px; heigh:310px">
+  <% if @novine.image.attached? %>
+    <%= link_to image_tag(@novine.image,
+    style:"width:300px; heigh:auto"), @novine.image %>
+  <% end %>
+  </p>
+</li>
+<li><hr /></li>

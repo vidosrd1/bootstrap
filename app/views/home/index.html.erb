@@ -1,2 +1,164 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Home</h1>
+<p>Documentation and examples for how to use
+  Bootstrap’s included navigation components.</p>
+<hr />
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Image/Pictures</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Novine</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Lists</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Posts</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+    <br />
+    <h4>Ovo je neki sadržaj za čuvanje mjesta
+      koji je povezan sa sadržajem kartice Početna.
+    </h4>
+    <p>
+      <%= link_to 'Image and Pictures', pins_path %>.
+      Kartica JavaScript mijenja klase radi kontrole vidljivosti sadržaja i stila.
+      Klikom na drugu karticu promijenit ćete vidljivost ove za sljedeću.
+      Možete ga koristiti s karticama, tabletama i bilo kojom drugom .navnavigacijom.
+    </p>
+    <br />
+  </div>
+  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+    <br />
+    <h4>Metode</h4>
+    <p><%= link_to 'Novine', novines_path %>.
+      Omogućite kartice koje se mogu tabbirati putem JavaScripta
+      (svaka kartica mora biti aktivirana zasebno).
+      Pojedinačne kartice možete aktivirati na nekoliko načina
+    </p>
+    <br />
+  </div>
+  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+    <br />
+    <h4>
+      Događaji
+    </h4>
+    <p><%= link_to 'Lists', lists_path %></p>
+    <p>
+      Kada se prikaže nova kartica, događaji se aktiviraju sljedećim redoslijedom:
+
+  hide.bs.tab(na trenutno aktivnoj kartici)
+  show.bs.tab(na kartici za prikaz)
+  hidden.bs.tab(na prethodnoj aktivnoj kartici, ista kao i za hide.bs.tabdogađaj)
+  shown.bs.tab(na novo-aktivnoj upravo prikazanoj kartici, ista kao i za događaj show.bs.tab)
+  Ako nijedna kartica već nije bila aktivna, događaji hide.bs.tabi hidden.bs.tabneće se pokrenuti.
+    </p>
+    <br />
+  </div>
+  <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+    <br />
+    <h4>Fade efekat
+    </h4>
+    <div><%= link_to 'Posts', posts_path %>.
+      Da biste učinili da kartice nestaju, dodajte .fadesvakom .tab-pane.
+      Prvo okno kartica također mora imati .showda početni sadržaj bude vidljiv.
+    </div>
+    <br />
+  </div>
+</div>
+<hr />
+<div class="d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Image/Pictures</button>
+    <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">Novine</button>
+    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Lists</button>
+    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Posts</button>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
+      <h4>Varijable - Dodato u v5.2.0</h4>
+      <div>Kao dio Bootstrap-ovog evoluirajućeg pristupa CSS varijabli, navs sada koristi lokalne CSS varijable na .nav, .nav-tabs, i .nav-pillsza poboljšanu prilagodbu u realnom vremenu. Vrijednosti za CSS varijable se postavljaju putem Sass-a, tako da je i Sass prilagođavanje i dalje podržano.
+
+Na .navosnovnoj klasi:
+
+  --#{$prefix}nav-link-padding-x: #{$nav-link-padding-x};
+  --#{$prefix}nav-link-padding-y: #{$nav-link-padding-y};
+  @include rfs($nav-link-font-size, --#{$prefix}nav-link-font-size);
+  --#{$prefix}nav-link-font-weight: #{$nav-link-font-weight};
+  --#{$prefix}nav-link-color: #{$nav-link-color};
+  --#{$prefix}nav-link-hover-color: #{$nav-link-hover-color};
+  --#{$prefix}nav-link-disabled-color: #{$nav-link-disabled-color};
+
+Na .nav-tabsklasi modifikatora:
+
+  --#{$prefix}nav-tabs-border-width: #{$nav-tabs-border-width};
+  --#{$prefix}nav-tabs-border-color: #{$nav-tabs-border-color};
+  --#{$prefix}nav-tabs-border-radius: #{$nav-tabs-border-radius};
+  --#{$prefix}nav-tabs-link-hover-border-color: #{$nav-tabs-link-hover-border-color};
+  --#{$prefix}nav-tabs-link-active-color: #{$nav-tabs-link-active-color};
+  --#{$prefix}nav-tabs-link-active-bg: #{$nav-tabs-link-active-bg};
+  --#{$prefix}nav-tabs-link-active-border-color: #{$nav-tabs-link-active-border-color};
+
+Na .nav-pillsklasi modifikatora:
+
+  --#{$prefix}nav-pills-border-radius: #{$nav-pills-border-radius};
+  --#{$prefix}nav-pills-link-active-color: #{$nav-pills-link-active-color};
+  --#{$prefix}nav-pills-link-active-bg: #{$nav-pills-link-active-bg};
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">
+      <h4>Sass varijable</h4>
+      <div>$nav-link-padding-y:                .5rem;
+$nav-link-padding-x:                1rem;
+$nav-link-font-size:                null;
+$nav-link-font-weight:              null;
+$nav-link-color:                    var(--#{$prefix}link-color);
+$nav-link-hover-color:              var(--#{$prefix}link-hover-color);
+$nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+$nav-link-disabled-color:           var(--#{$prefix}secondary-color);
+
+$nav-tabs-border-color:             var(--#{$prefix}border-color);
+$nav-tabs-border-width:             var(--#{$prefix}border-width);
+$nav-tabs-border-radius:            var(--#{$prefix}border-radius);
+$nav-tabs-link-hover-border-color:  var(--#{$prefix}secondary-bg) var(--#{$prefix}secondary-bg) $nav-tabs-border-color;
+$nav-tabs-link-active-color:        var(--#{$prefix}emphasis-color);
+$nav-tabs-link-active-bg:           var(--#{$prefix}body-bg);
+$nav-tabs-link-active-border-color: var(--#{$prefix}border-color) var(--#{$prefix}border-color) $nav-tabs-link-active-bg;
+
+$nav-pills-border-radius:           $border-radius;
+$nav-pills-link-active-color:       $component-active-color;
+$nav-pills-link-active-bg:          $component-active-bg;
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">
+      <h4>JavaScript ponašanje</h4>
+      <div>
+        Koristite JavaScript dodatak za karticu—uključite ga pojedinačno ili
+        putem kompajlirane bootstrap.jsdatoteke—da proširite naše navigacijske kartice
+        i tablete kako biste kreirali okna lokalnog sadržaja na kojima se mogu tabulatori.
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+      <h4>Pristupačnost</h4>
+      <div>
+        Dinamički interfejsi sa karticama, kao što je opisano u ARIA-ovom vodiču za autorske prakse , zahtevaju role="tablist", role="tab", role="tabpanel", i dodatne aria-atribute kako bi preneli svoju strukturu, funkcionalnost i trenutno stanje korisnicima pomoćnih tehnologija (kao što su čitači ekrana). Kao najbolju praksu, preporučujemo korištenje <button>elemenata za kartice, jer su to kontrole koje pokreću dinamičku promjenu, a ne veze koje vode do nove stranice ili lokacije.
+
+U skladu sa šablonom ARIA Authoring Practices, samo trenutno aktivna kartica dobija fokus tastature. Kada se JavaScript dodatak inicijalizira, on će se postaviti tabindex="-1"na sve neaktivne kontrole kartice. Kada trenutno aktivna kartica ima fokus, tasteri sa kursorom aktiviraju prethodnu/sljedeću karticu, a dodatak u skladu s tim mijenja kretanjetabindex . Međutim, imajte na umu da JavaScript dodatak ne pravi razliku između horizontalnih i vertikalnih lista kartica kada su u pitanju interakcije tipki sa kursorom: bez obzira na orijentaciju liste kartica, i gornji i lijevi kursor idu na prethodnu karticu, a dolje i desni kursor idu na sljedeća kartica.
+
+Uopšteno govoreći, da bi se olakšala navigacija tastaturom, preporučuje se da se i sami paneli kartica takođe mogu fokusirati, osim ako je prvi element koji sadrži smisleni sadržaj unutar tabla sa karticama već fokusiran. JavaScript dodatak ne pokušava da obradi ovaj aspekt—gde je to prikladno, moraćete eksplicitno da svoje tabele učinite fokusiranim dodavanjem tabindex="0"vaše oznake.
+Tab JavaScript dodatak ne podržava interfejse sa karticama koji sadrže padajuće menije, jer oni uzrokuju probleme upotrebljivosti i pristupačnosti. Iz perspektive upotrebljivosti, činjenica da element okidača trenutno prikazane kartice nije odmah vidljiv (jer se nalazi unutar zatvorenog padajućeg menija) može izazvati zabunu. Sa stanovišta pristupačnosti, trenutno ne postoji razuman način da se ova vrsta konstrukcije mapira u standardni WAI ARIA obrazac, što znači da se ne može lako učiniti razumljivim korisnicima pomoćnih tehnologija.
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">
+      <h4>Korištenje atributa podataka</h4>
+      <div>Možete aktivirati navigaciju po kartici ili tabletama bez pisanja
+        JavaScripta jednostavnim navođenjem data-bs-toggle="tab"ili data-bs-toggle="pill"na elementu.
+        Koristite ove atribute podataka na .nav-tabsili .nav-pills.
+      </div>
+    </div>
+  </div>
+</div>
+<br />

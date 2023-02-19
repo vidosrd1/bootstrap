@@ -3,7 +3,6 @@
     <strong>Title:</strong>
     <%= pin.title %>
   </p>
-  <%= pin.body %>
   <br />
   <% if pin.image.content_type.in?(%w[image/jpeg image/png image/jpg]) %>
     <%= link_to image_tag(pin.image),
@@ -11,6 +10,7 @@
       pin.image.attached? %>
   <% end %>
   <hr />
+  <%= pin.body %>
   <% pin.pictures.each do |picture| %>
     <% picture %>
   <% end %>

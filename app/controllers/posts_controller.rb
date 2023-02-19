@@ -58,14 +58,13 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :publish).with_defaults(user: current_user)
+      params.require(:post).permit(:title,
+        :image, :body, :publish).with_defaults(user: current_user)
     end
 
     def current_user

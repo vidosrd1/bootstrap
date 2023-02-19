@@ -17,11 +17,6 @@
   </div>
 
   <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.rich_text_area :body %>
-  </div>
-
-  <div>
     <%= form.label :image, style: "display: block" %>
     <%= form.file_field :image %>
   </div>
@@ -29,6 +24,11 @@
   <div>
     <%= form.label :pictures, style: "display: block" %>
     <%= form.file_field :pictures, multiple: true %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.rich_text_area :body %>
   </div>
 
   <div>

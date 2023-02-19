@@ -8,20 +8,25 @@
     <ul class="nav navbar-nav">
       <li class="">
         <p style="width:310px; heigh:310px">
-          <%= image_tag(@pin.image,
-          style:"width:300px, height:300px") %>
+        <% if @pin.image.attached? %>
+          <%= link_to image_tag(@pin.image,
+          style:"width:300px; heigh:auto"), @pin.image %>
+        <% end %>
         </p>
       </li>
+      <li><hr /></li>
       <li class="">
         <p style="width:400px; heigh:200px">
           <%= @pin.body %>
         </p>
       </li>
+      <li><hr /></li>
       <li class="">
-        <p style="width:310px; heigh:310px">
+        <p style="width:820px; heigh:auto; border:10; margin:10px; padding:10px">
           <% if @pin.pictures.attached? %>
           <% @pin.pictures.each do |pictere| %>
-          <% end %>
+          <%= link_to image_tag(pictere,
+          style:"width:100px; heigh:auto"), pictere %>          <% end %>
           <% end %>
         </p>
       </li>
@@ -34,3 +39,4 @@
 
   <%= button_to "Destroy this pin", @pin, method: :delete %>
 </div>
+<br />
